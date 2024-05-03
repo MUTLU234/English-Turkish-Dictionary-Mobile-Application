@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View ,KeyboardAvoidingView, TouchableOpacity} from 'react-native'
 import React ,{useState,useEffect} from 'react'
 import { TextInput } from 'react-native';
-import { auth } from '../../../firebase';
+import { auth } from '../firebase';
 
 
 export default function LoginScreen() {
