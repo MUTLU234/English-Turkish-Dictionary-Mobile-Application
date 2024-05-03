@@ -1,20 +1,42 @@
 import { StyleSheet, Text, View ,KeyboardAvoidingView, TouchableOpacity} from 'react-native'
-import React ,{useState} from 'react'
+import React ,{useState,useEffect} from 'react'
 import { TextInput } from 'react-native';
-import { auth } from 'dictionary-e7247.firebaseapp.com';
+import { auth } from '../../../firebase';
+
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigation=useNavigation();
+  useEffect(()=>{
+  auth.onAuthStateChanged(user=>{
+    if(user){
+      navigation.navigate('Home');
+    }
+  })
+    },[])
+
   const handleSignUp = () => {
-    auth.createUserWithEmailAndPassword(email,password)
-    then(userCredentials =>{
+    auth
+    .createUserWithEmailAndPassword(email,password)
+    .then(userCredentials =>{
+      const user = userCredentials.user;
+      console.log('Kullanıcı giriş yaptı',user.email)
+    })
+    .catch(error => alert(error.message));
+
+  const handleLogin = () => {
+    auth
+    .signInWithEmailAndPassword(email,password)
+    .then(userCredentials =>{
       const user = userCredentials.user;
       console.log('Kullanıcı',user.email)
     })
-    .catch(error => (error.message))
+    .catch(error => alert(error.message));
+    
   }
+}
   return (
     //KeyboardAvoidingView sayesinde klavye açılınca yazı  yazılan alan da yukarı çıkar klavye ekranı kapatmamış olur.
     <KeyboardAvoidingView style={styles.container} behavior='padding'>
@@ -29,7 +51,7 @@ export default function LoginScreen() {
         onChangeText={text => setPassword(text)}/>
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity onPress={handleLogin} style={styles.button}>
           <Text style={styles.buttonText}>Log In</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={handleSignUp} style={[styles.button,styles.outlineButton]}>
@@ -37,7 +59,7 @@ export default function LoginScreen() {
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
