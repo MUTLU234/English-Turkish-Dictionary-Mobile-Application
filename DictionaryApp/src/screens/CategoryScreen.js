@@ -10,14 +10,18 @@ class Category {
     this.id = color ;
   }
 }
+export default function CategoryScreen(){
+  function renderCategoryItem(itemData){
+  console.log(itemData.item);}
+}
 
 export default Category;
 
 export const CATEGORIES = [
-  new Category('c1','Difficulty levels','blue'),
-  new Category('c2','Types of Words','red'),
-  new Category('c3','Functional Uses','green'),
-  new Category('c4','Idioms and Phrases','brown'),  
+  new Category('c1','Difficulty levels','red'),
+  new Category('c2','Types of Words','blue'),
+  new Category('c3','Functional Uses','brown'),
+  new Category('c4','Idioms and Phrases','green'),  
 ];
 
 

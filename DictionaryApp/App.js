@@ -5,7 +5,20 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 //import LoginSigninScreen from './src/screens/LoginScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import LoginScreen from './src/screens/LoginScreen';
+// import firebase from "firebase/app";
+// import "firebase/auth"
 
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAPHgk6RnF1KBAoYGAFSbHFox4gce_aOcU",
+//   authDomain: "dictionary-e7247.firebaseapp.com",
+//   projectId: "dictionary-e7247",
+//   storageBucket: "dictionary-e7247.appspot.com",
+//   messagingSenderId: "762657350301",
+//   appId: "1:762657350301:web:2b142a2cca30360f7dea74"
+// };
+
+// firebase.initializeApp(firebaseConfig);
 
 const Stack = createNativeStackNavigator();
 
