@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View ,TouchableOpacity} from 'react-native'
-import React from 'react'
+//import { StyleSheet, Text, View ,TouchableOpacity} from 'react-native'
+//import React from 'react'
 //import { auth } from '';
 //import { useNavigation } from '@react-navigation/native';
 
@@ -23,24 +23,24 @@ import React from 'react'
 //   )
 // }
 
-const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center',
-  },
-  button:{
-    backgroundColor:'#0782F9',
-    marginTop:50,
-    borderRadius:5,
-    padding:5,
-    alignItems:'center',
-    width: '60%',
-  },
-  buttonText:{
-    color:'white',
-    fontSize:16,//yazı tipi boyutu
-    //fontWeight: 700,
-    //fontWeight: 70,
-  },
-})
+// const styles = StyleSheet.create({
+//   container:{
+//     flex:1,
+//     justifyContent:'center',
+//     alignItems:'center',
+//   },
+//   button:{
+//     backgroundColor:'#0782F9',
+//     marginTop:50,
+//     borderRadius:5,
+//     padding:5,
+//     alignItems:'center',
+//     width: '60%',
+//   },
+//   buttonText:{
+//     color:'white',
+//     fontSize:16,//yazı tipi boyutu
+//     //fontWeight: 700,
+//     //fontWeight: 70,
+//   },
+// })
